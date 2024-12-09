@@ -104,6 +104,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      * @param args the command line arguments
      */
 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInventario;
     private javax.swing.JButton btnVentas;
