@@ -12,12 +12,12 @@ public class Bebida {
     String nombre;
     int id;
     int cantidad;
-    double precio;
+    int precio;
 
     public Bebida() {
     }
 
-    public Bebida(String nombre, int id, int cantidad, double precio) {
+    public Bebida(String nombre, int id, int cantidad, int precio) {
         this.nombre = nombre;
         this.id = id;
         this.cantidad = cantidad;
@@ -48,11 +48,11 @@ public class Bebida {
         this.cantidad = cantidad;
     }
 
-    public double getPrecio() {
+    public int getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
  

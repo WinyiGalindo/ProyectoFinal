@@ -4,6 +4,9 @@
  */
 package ProyectoFinal.vista;
 
+import ProyectoFinal.modelo.Bebida;
+import java.util.ArrayList;
+
 /**
  *
  * @author sotod
