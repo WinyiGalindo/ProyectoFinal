@@ -16,21 +16,33 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PantallaInventario extends javax.swing.JFrame {
 
-    private ArrayList<Bebida> ListaBebidas;
+    private ArrayList<Bebida> listaBebidas;
 
-    public PantallaInventario() {
+    public PantallaInventario(ArrayList<Bebida> listaBebidas) {
         initComponents();
+
         
-        ListaBebidas = new ArrayList<>(); // Inicializa la lista.
+        // Inicializa la lista.
         cargarInventario();              // Carga los datos en la lista.
         mostrarInventarioEnTabla();
+        this.listaBebidas = listaBebidas;
+        actualizarTabla();
+    }
+
+    private void actualizarTabla() {
+        DefaultTableModel model = (DefaultTableModel) tblInventario.getModel();
+        model.setRowCount(0); // Limpia la tabla
+
+        for (Bebida bebida : listaBebidas) {
+            model.addRow(new Object[]{bebida.getId(), bebida.getNombre(), bebida.getPrecio(), bebida.getCantidad()});
+        }
     }
 
     private void mostrarInventarioEnTabla() {
         String[] columnas = {"ID", "Nombre", "Cantidad", "Precio"};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
 
-        for (Bebida bebida : ListaBebidas) {
+        for (Bebida bebida : listaBebidas) {
             Object[] fila = {bebida.getId(), bebida.getNombre(), bebida.getCantidad(), bebida.getPrecio()};
             modelo.addRow(fila);
         }
@@ -41,21 +53,19 @@ public class PantallaInventario extends javax.swing.JFrame {
 
     private void cargarInventario() {
         CBebida controladorBebida = new CBebida();
-        controladorBebida.crearInventario(ListaBebidas);
+        controladorBebida.crearInventario(listaBebidas);
     }
 
-    public void actualizarInventario(ArrayList<Bebida> ListaBebidas) {
-    // Si tienes una tabla llamada jTableBebidas, la actualizamos
-    DefaultTableModel modelo = (DefaultTableModel) tblInventario.getModel();
-    modelo.setRowCount(0); // Limpiar la tabla antes de agregar las nuevas filas
+    public void actualizarInventario(ArrayList<Bebida> listaBebidas) {
+        // Si tienes una tabla llamada jTableBebidas, la actualizamos
+        DefaultTableModel modelo = (DefaultTableModel) tblInventario.getModel();
+        modelo.setRowCount(0); // Limpiar la tabla antes de agregar las nuevas filas
 
-    // Añadir cada bebida en la lista
-    for (Bebida bebida : ListaBebidas) {
-        modelo.addRow(new Object[]{bebida.getId(), bebida.getNombre(), bebida.getCantidad(), bebida.getPrecio()});
+        // Añadir cada bebida en la lista
+        for (Bebida bebida : listaBebidas) {
+            modelo.addRow(new Object[]{bebida.getId(), bebida.getNombre(), bebida.getCantidad(), bebida.getPrecio()});
+        }
     }
-}
-
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -277,7 +287,7 @@ public class PantallaInventario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        PantallaEliminar pantallaEliminar = new PantallaEliminar();
+        PantallaEliminar pantallaEliminar = new PantallaEliminar(listaBebidas);
         pantallaEliminar.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -310,9 +320,9 @@ public class PantallaInventario extends javax.swing.JFrame {
         int cantidad = Integer.parseInt(txtProductoNuevoCantidad.getText());
         int precio = Integer.parseInt(txtProductoNuevoPrecio.getText());
         Bebida nuevaBebida = new Bebida(nombre, id, cantidad, precio);
-        ListaBebidas.add(nuevaBebida);
-        PantallaInventario pantallaInventario = new PantallaInventario();
-        pantallaInventario.actualizarInventario(ListaBebidas);  // Pasas la lista de bebidas actualizada
+        listaBebidas.add(nuevaBebida);
+        PantallaInventario pantallaInventario = new PantallaInventario(listaBebidas);
+        pantallaInventario.actualizarInventario(listaBebidas);  // Pasas la lista de bebidas actualizada
         pantallaInventario.setVisible(true);
 
         // Cerrar la pantalla de registro

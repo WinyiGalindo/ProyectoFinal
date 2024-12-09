@@ -4,17 +4,24 @@
  */
 package ProyectoFinal.vista;
 
+import ProyectoFinal.controlador.CBebida;
+import ProyectoFinal.modelo.Bebida;
+import java.util.ArrayList;
+
 /**
  *
  * @author sotod
  */
 public class PantallaEliminar extends javax.swing.JFrame {
 
+    private ArrayList<Bebida> listaBebidas;
+
     /**
      * Creates new form PantallaEliminar
      */
-    public PantallaEliminar() {
+    public PantallaEliminar(ArrayList<Bebida> listaBebidas) {
         initComponents();
+        this.listaBebidas = listaBebidas; // Asignar la lista
     }
 
     /**
@@ -29,6 +36,9 @@ public class PantallaEliminar extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtEliminarProducto = new javax.swing.JTextField();
+        btnEliminarProducto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,25 +52,46 @@ public class PantallaEliminar extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setText("Digite el ID del producto que desea eliminar:");
+
+        btnEliminarProducto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnEliminarProducto.setText("Eliminar Producto");
+        btnEliminarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarProductoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(183, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(183, 183, 183))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 439, Short.MAX_VALUE)
+                .addGap(16, 16, 16)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(txtEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(btnEliminarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 302, Short.MAX_VALUE)
                 .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -84,19 +115,37 @@ public class PantallaEliminar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        PantallaInventario pantallaInventario = new PantallaInventario();
+        PantallaInventario pantallaInventario = new PantallaInventario(listaBebidas);
         pantallaInventario.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
+    private void btnEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductoActionPerformed
+        try {
+            int id = Integer.parseInt(txtEliminarProducto.getText()); // Obtener el ID del campo
+            CBebida controlador = new CBebida(); // Instanciar controlador
+            boolean eliminado = controlador.eliminarProductoPorID(listaBebidas, id); // Intentar eliminar
+
+            if (eliminado) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Producto eliminado exitosamente.");
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "No se encontró un producto con el ID especificado.");
+            }
+        } catch (NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Por favor, ingrese un ID válido.");
+        }
+    }//GEN-LAST:event_btnEliminarProductoActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEliminarProducto;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtEliminarProducto;
     // End of variables declaration//GEN-END:variables
 }

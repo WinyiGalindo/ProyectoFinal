@@ -4,17 +4,26 @@
  */
 package ProyectoFinal.vista;
 
+import ProyectoFinal.controlador.CBebida;
+import ProyectoFinal.modelo.Bebida;
+import java.util.ArrayList;
+
 /**
  *
  * @author sotod
  */
 public class PantallaConsultar extends javax.swing.JFrame {
 
+    private ArrayList<Bebida> listaBebidas;
+
     /**
      * Creates new form PantallaConsultar
      */
     public PantallaConsultar() {
         initComponents();
+        listaBebidas = new ArrayList<>(); // Inicializar la lista
+        CBebida controlador = new CBebida();
+        controlador.crearInventario(listaBebidas); // Crear el inventario
     }
 
     /**
@@ -83,7 +92,7 @@ public class PantallaConsultar extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 406, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtConsultarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnConsultarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnConsultarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(btnVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -125,18 +134,45 @@ public class PantallaConsultar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        PantallaInventario pantallaInventario = new PantallaInventario();
+        PantallaInventario pantallaInventario = new PantallaInventario(listaBebidas);
         pantallaInventario.setVisible(true);
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnConsultarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarProductoActionPerformed
-        // TODO add your handling code here:
+        String idTexto = txtConsultarProducto.getText().trim();
+
+        if (idTexto.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Por favor, ingrese un ID de producto.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        try {
+            int idProducto = Integer.parseInt(idTexto);
+
+            CBebida controlador = new CBebida();
+            Bebida bebida = controlador.consultarProducto(idProducto, listaBebidas); // listaBebidas debe estar inicializada
+
+            javax.swing.table.DefaultTableModel modelo = (javax.swing.table.DefaultTableModel) tblConsultar.getModel();
+            modelo.setRowCount(0); // Limpiar tabla
+
+            if (bebida != null) {
+                modelo.addRow(new Object[]{
+                    bebida.getId(),
+                    bebida.getNombre(),
+                    bebida.getCantidad(),
+                    bebida.getPrecio()
+                });
+            } else {
+                javax.swing.JOptionPane.showMessageDialog(this, "No se encontró un producto con el ID especificado.", "Producto no encontrado", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Por favor, ingrese un ID válido.", "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnConsultarProductoActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConsultarProducto;
