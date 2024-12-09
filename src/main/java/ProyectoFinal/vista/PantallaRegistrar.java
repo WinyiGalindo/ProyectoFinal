@@ -4,17 +4,29 @@
  */
 package ProyectoFinal.vista;
 
+import ProyectoFinal.controlador.CBebida;
+import ProyectoFinal.modelo.Bebida;
+import java.util.ArrayList;
+
 /**
  *
  * @author sotod
  */
 public class PantallaRegistrar extends javax.swing.JFrame {
 
+    private ArrayList<Bebida> ListaBebidas;
+
     /**
      * Creates new form PantallaRegistrar
      */
     public PantallaRegistrar() {
+
         initComponents();
+    }
+
+    private void cargarInventario() {
+        CBebida controladorBebida = new CBebida();
+        controladorBebida.crearInventario(ListaBebidas);
     }
 
     /**
@@ -151,13 +163,17 @@ public class PantallaRegistrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // Llamar a la pantalla de inventario y pasar la lista actualizada
         PantallaInventario pantallaInventario = new PantallaInventario();
+        pantallaInventario.actualizarInventario(ListaBebidas); // Pasas la lista de bebidas actualizada
         pantallaInventario.setVisible(true);
+
+        // Cerrar la pantalla de registro
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void txtProductoNuevoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProductoNuevoNombreActionPerformed
-        
+
     }//GEN-LAST:event_txtProductoNuevoNombreActionPerformed
 
     private void btnRegistrarProductoNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarProductoNuevoActionPerformed
@@ -165,14 +181,20 @@ public class PantallaRegistrar extends javax.swing.JFrame {
         int id = Integer.parseInt(txtProductoNuevoId.getText());
         int cantidad = Integer.parseInt(txtProductoNuevoCantidad.getText());
         int precio = Integer.parseInt(txtProductoNuevoPrecio.getText());
-        
-        
+        Bebida nuevaBebida = new Bebida(nombre, id, cantidad, precio);
+        ListaBebidas.add(nuevaBebida);
+        PantallaInventario pantallaInventario = new PantallaInventario();
+        pantallaInventario.actualizarInventario(ListaBebidas);  // Pasas la lista de bebidas actualizada
+        pantallaInventario.setVisible(true);
+
+        // Cerrar la pantalla de registro
+        this.dispose();
+
     }//GEN-LAST:event_btnRegistrarProductoNuevoActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrarProductoNuevo;

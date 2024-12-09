@@ -16,37 +16,46 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PantallaInventario extends javax.swing.JFrame {
 
-    private ArrayList<Bebida> listaBebidas;
-     
+    private ArrayList<Bebida> ListaBebidas;
+
     public PantallaInventario() {
         initComponents();
         
-        listaBebidas = new ArrayList<>(); // Inicializa la lista.
+        ListaBebidas = new ArrayList<>(); // Inicializa la lista.
         cargarInventario();              // Carga los datos en la lista.
-        mostrarInventarioEnTabla(); 
+        mostrarInventarioEnTabla();
     }
-    
-    private void cargarInventario() {
-        CBebida controladorBebida = new CBebida();
-        controladorBebida.crearInventario(listaBebidas);
-    }
-    
+
     private void mostrarInventarioEnTabla() {
         String[] columnas = {"ID", "Nombre", "Cantidad", "Precio"};
-        DefaultTableModel modelo = new DefaultTableModel(columnas, 0); // Modelo vacío con las columnas.
+        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
 
-        for (Bebida bebida : listaBebidas) {
-            Object[] fila = {
-                bebida.getId(),
-                bebida.getNombre(),
-                bebida.getCantidad(),
-                bebida.getPrecio()
-            };
-            modelo.addRow(fila); // Agrega la fila al modelo.
+        for (Bebida bebida : ListaBebidas) {
+            Object[] fila = {bebida.getId(), bebida.getNombre(), bebida.getCantidad(), bebida.getPrecio()};
+            modelo.addRow(fila);
         }
 
-        tblInventario.setModel(modelo); // Establece el modelo en la tabla.
+        // Supongamos que tienes un JTable llamado jTableInventario
+        tblInventario.setModel(modelo);
     }
+
+    private void cargarInventario() {
+        CBebida controladorBebida = new CBebida();
+        controladorBebida.crearInventario(ListaBebidas);
+    }
+
+    public void actualizarInventario(ArrayList<Bebida> listaBebidas) {
+    // Si tienes una tabla llamada jTableBebidas, la actualizamos
+    DefaultTableModel modelo = (DefaultTableModel) tblInventario.getModel();
+    modelo.setRowCount(0); // Limpiar la tabla antes de agregar las nuevas filas
+
+    // Añadir cada bebida en la lista
+    for (Bebida bebida : listaBebidas) {
+        modelo.addRow(new Object[]{bebida.getId(), bebida.getNombre(), bebida.getCantidad(), bebida.getPrecio()});
+    }
+}
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -225,7 +234,6 @@ public class PantallaInventario extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConsultar;
