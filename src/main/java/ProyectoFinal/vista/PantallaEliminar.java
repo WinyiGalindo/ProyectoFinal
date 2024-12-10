@@ -7,6 +7,7 @@ package ProyectoFinal.vista;
 import ProyectoFinal.controlador.CBebida;
 import ProyectoFinal.modelo.Bebida;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -14,14 +15,14 @@ import java.util.ArrayList;
  */
 public class PantallaEliminar extends javax.swing.JFrame {
 
-    private ArrayList<Bebida> listaBebidas;
+    public ArrayList<Bebida> ListaBebidas;
 
     /**
      * Creates new form PantallaEliminar
      */
-    public PantallaEliminar(ArrayList<Bebida> listaBebidas) {
+    public PantallaEliminar(ArrayList<Bebida> ListaBebidas) {
         initComponents();
-        this.listaBebidas = listaBebidas; // Asignar la lista
+        this.ListaBebidas = ListaBebidas; // Asignar la lista
     }
 
     /**
@@ -117,14 +118,23 @@ public class PantallaEliminar extends javax.swing.JFrame {
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         PantallaInventario pantallaInventario = new PantallaInventario();
         pantallaInventario.setVisible(true);
+        String[] columnas = {"ID", "Nombre", "Cantidad", "Precio"};
+        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
+
+        // Agregar cada bebida de la lista a la tabla
+        for (Bebida bebida : ListaBebidas) {
+            Object[] fila = {bebida.getNombre(), bebida.getId(), bebida.getCantidad(), bebida.getPrecio()};
+            modelo.addRow(fila);
+        }
         this.dispose();
+
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnEliminarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarProductoActionPerformed
         try {
             int id = Integer.parseInt(txtEliminarProducto.getText()); // Obtener el ID del campo
             CBebida controlador = new CBebida(); // Instanciar controlador
-            boolean eliminado = controlador.eliminarProductoPorID(listaBebidas, id); // Intentar eliminar
+            boolean eliminado = controlador.eliminarProductoPorID(ListaBebidas, id); // Intentar eliminar
 
             if (eliminado) {
                 javax.swing.JOptionPane.showMessageDialog(this, "Producto eliminado exitosamente.");

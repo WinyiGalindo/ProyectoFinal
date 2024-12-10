@@ -13,14 +13,13 @@ import java.util.ArrayList;
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
 
-    private ArrayList<Bebida> listaBebidas;
+    public ArrayList<Bebida> ListaBebidas;
 
     /**
      * Creates new form PantallaPrincipal
      */
     public PantallaPrincipal() {
         initComponents();
-        listaBebidas = new ArrayList<>();
     }
 
     /**

@@ -16,32 +16,25 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PantallaInventario extends javax.swing.JFrame {
 
-    private ArrayList<Bebida> listaBebidas;
+    public ArrayList<Bebida> ListaBebidas;
 
     public PantallaInventario() {
         initComponents();
-        listaBebidas = new ArrayList<>();
+        ListaBebidas = new ArrayList<>();
         // Inicializa la lista.
         cargarInventario();              // Carga los datos en la lista.
         mostrarInventarioEnTabla();
 
-        actualizarTabla();
+        
     }
 
-    private void actualizarTabla() {
-        DefaultTableModel model = (DefaultTableModel) tblInventario.getModel();
-        model.setRowCount(0); // Limpia la tabla
-
-        for (Bebida bebida : listaBebidas) {
-            model.addRow(new Object[]{bebida.getId(), bebida.getNombre(), bebida.getPrecio(), bebida.getCantidad()});
-        }
-    }
+    
 
     private void mostrarInventarioEnTabla() {
         String[] columnas = {"ID", "Nombre", "Cantidad", "Precio"};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
 
-        for (Bebida bebida : listaBebidas) {
+        for (Bebida bebida : ListaBebidas) {
             Object[] fila = {bebida.getId(), bebida.getNombre(), bebida.getCantidad(), bebida.getPrecio()};
             modelo.addRow(fila);
         }
@@ -52,7 +45,7 @@ public class PantallaInventario extends javax.swing.JFrame {
 
     private void cargarInventario() {
         CBebida controladorBebida = new CBebida();
-        controladorBebida.crearInventario(listaBebidas);
+        controladorBebida.crearInventario(ListaBebidas);
     }
 
     public void actualizarInventario(ArrayList<Bebida> listaBebidas) {
@@ -94,6 +87,7 @@ public class PantallaInventario extends javax.swing.JFrame {
         txtProductoNuevoCantidad = new javax.swing.JTextField();
         txtProductoNuevoPrecio = new javax.swing.JTextField();
         btnRegistrarProductoNuevo = new javax.swing.JButton();
+        btnActualizarInventario = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -173,6 +167,13 @@ public class PantallaInventario extends javax.swing.JFrame {
             }
         });
 
+        btnActualizarInventario.setText("Actualizar inventario");
+        btnActualizarInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarInventarioActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -188,7 +189,10 @@ public class PantallaInventario extends javax.swing.JFrame {
                     .addComponent(txtProductoNuevoCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtProductoNuevoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegistrarProductoNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRegistrarProductoNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(btnActualizarInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(163, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -210,7 +214,9 @@ public class PantallaInventario extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtProductoNuevoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
+                .addComponent(btnActualizarInventario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(btnRegistrarProductoNuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60))
         );
@@ -289,7 +295,7 @@ public class PantallaInventario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        PantallaEliminar pantallaEliminar = new PantallaEliminar(listaBebidas);
+        PantallaEliminar pantallaEliminar = new PantallaEliminar(ListaBebidas);
         pantallaEliminar.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -322,20 +328,33 @@ public class PantallaInventario extends javax.swing.JFrame {
         int cantidad = Integer.parseInt(txtProductoNuevoCantidad.getText());
         int precio = Integer.parseInt(txtProductoNuevoPrecio.getText());
         Bebida nuevaBebida = new Bebida(nombre, id, cantidad, precio);
-        listaBebidas.add(nuevaBebida);
+        ListaBebidas.add(nuevaBebida);
         PantallaInventario pantallaInventario = new PantallaInventario();
-        pantallaInventario.actualizarInventario(listaBebidas);  // Pasas la lista de bebidas actualizada
+        pantallaInventario.actualizarInventario(ListaBebidas);  // Pasas la lista de bebidas actualizada
         pantallaInventario.setVisible(true);
 
         // Cerrar la pantalla de registro
         this.dispose();
     }//GEN-LAST:event_btnRegistrarProductoNuevoActionPerformed
 
+    private void btnActualizarInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarInventarioActionPerformed
+       String[] columnas = {"ID", "Nombre", "Cantidad", "Precio"};
+        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
+        modelo.setRowCount(0);  // Limpia la tabla sin borrar la lista
+
+    // Agregar cada bebida de la lista a la tabla
+    for (Bebida bebida : ListaBebidas) {
+        Object[] fila = {bebida.getNombre(), bebida.getId(), bebida.getCantidad(), bebida.getPrecio()};
+        modelo.addRow(fila);
+    }
+    }//GEN-LAST:event_btnActualizarInventarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizarInventario;
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
