@@ -95,7 +95,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
-        PantallaInventario pantallaInventario = new PantallaInventario(listaBebidas);  // Asegúrate de pasar la lista correctamente
+        PantallaInventario pantallaInventario = new PantallaInventario();  // Asegúrate de pasar la lista correctamente
         pantallaInventario.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnInventarioActionPerformed

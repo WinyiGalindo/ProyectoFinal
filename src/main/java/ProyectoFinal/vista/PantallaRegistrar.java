@@ -164,7 +164,7 @@ public class PantallaRegistrar extends javax.swing.JFrame {
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // Llamar a la pantalla de inventario y pasar la lista actualizada
-        PantallaInventario pantallaInventario = new PantallaInventario(ListaBebidas);
+        PantallaInventario pantallaInventario = new PantallaInventario();
         pantallaInventario.actualizarInventario(ListaBebidas); // Pasas la lista de bebidas actualizada
         pantallaInventario.setVisible(true);
         this.dispose();
@@ -183,7 +183,7 @@ public class PantallaRegistrar extends javax.swing.JFrame {
         int precio = Integer.parseInt(txtProductoNuevoPrecio.getText());
         Bebida nuevaBebida = new Bebida(nombre, id, cantidad, precio);
         ListaBebidas.add(nuevaBebida);
-        PantallaInventario pantallaInventario = new PantallaInventario(ListaBebidas);
+        PantallaInventario pantallaInventario = new PantallaInventario();
         pantallaInventario.actualizarInventario(ListaBebidas);  // Pasas la lista de bebidas actualizada
         pantallaInventario.setVisible(true);
 

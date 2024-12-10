@@ -18,14 +18,13 @@ public class PantallaInventario extends javax.swing.JFrame {
 
     private ArrayList<Bebida> listaBebidas;
 
-    public PantallaInventario(ArrayList<Bebida> listaBebidas) {
+    public PantallaInventario() {
         initComponents();
-
-        
+        listaBebidas = new ArrayList<>();
         // Inicializa la lista.
         cargarInventario();              // Carga los datos en la lista.
         mostrarInventarioEnTabla();
-        this.listaBebidas = listaBebidas;
+
         actualizarTabla();
     }
 
@@ -76,6 +75,7 @@ public class PantallaInventario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnConsultar = new javax.swing.JButton();
@@ -272,15 +272,17 @@ public class PantallaInventario extends javax.swing.JFrame {
                         .addGap(18, 18, 18))))
         );
 
+        jScrollPane2.setViewportView(jPanel1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1453, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1262, Short.MAX_VALUE)
         );
 
         pack();
@@ -321,7 +323,7 @@ public class PantallaInventario extends javax.swing.JFrame {
         int precio = Integer.parseInt(txtProductoNuevoPrecio.getText());
         Bebida nuevaBebida = new Bebida(nombre, id, cantidad, precio);
         listaBebidas.add(nuevaBebida);
-        PantallaInventario pantallaInventario = new PantallaInventario(listaBebidas);
+        PantallaInventario pantallaInventario = new PantallaInventario();
         pantallaInventario.actualizarInventario(listaBebidas);  // Pasas la lista de bebidas actualizada
         pantallaInventario.setVisible(true);
 
@@ -348,6 +350,7 @@ public class PantallaInventario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblInventario;
     private javax.swing.JTextField txtProductoNuevoCantidad;
     private javax.swing.JTextField txtProductoNuevoId;
