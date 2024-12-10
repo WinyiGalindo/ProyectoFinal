@@ -50,6 +50,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         btnVentas.setText("VENTAS");
         btnVentas.setPreferredSize(new java.awt.Dimension(98, 23));
+        btnVentas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVentasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -98,6 +103,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         pantallaInventario.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnInventarioActionPerformed
+
+    private void btnVentasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasActionPerformed
+        PantallaVenta pantallaVenta = new PantallaVenta();  
+        pantallaVenta.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVentasActionPerformed
 
     /**
      * @param args the command line arguments

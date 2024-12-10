@@ -5,6 +5,7 @@
 package ProyectoFinal.vista;
 
 import java.awt.Image;
+import java.awt.print.PrinterException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
@@ -20,6 +21,7 @@ public class PantallaVenta extends javax.swing.JFrame {
 
     private double total = 0.0;
     private int x = 0;
+    private double impuesto = 0.0;
 
     public PantallaVenta() {
         initComponents();
@@ -45,6 +47,10 @@ public class PantallaVenta extends javax.swing.JFrame {
     }
 
     public void resetear() {
+        total = 0.0;
+        x = 0;
+        impuesto = 0.0;
+        jButton1.setEnabled(true);
         jSpinner1.setValue(0);
         jSpinner2.setValue(0);
         jSpinner3.setValue(0);
@@ -79,6 +85,13 @@ public class PantallaVenta extends javax.swing.JFrame {
         jCheckBox13.setSelected(false);
         jCheckBox14.setSelected(false);
         jCheckBox15.setSelected(false);
+
+    }
+
+    public void dudate() {
+        txtImpuesto.setText(String.valueOf(String.format("%.2f", impuesto)));
+        txtSubtotal.setText(String.valueOf(String.format("%.2f", total)));
+        txtTotal.setText(String.valueOf(String.format("%.2f", total+impuesto)));
     }
 
     @SuppressWarnings("unchecked")
@@ -275,7 +288,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jCheckBox15 = new javax.swing.JCheckBox();
         jPanel21 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnRecibo = new javax.swing.JButton();
         btnResetear = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
@@ -295,6 +308,17 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(235, 235, 235));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(230, 230, 230), 2));
+        jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel2MouseDragged(evt);
+            }
+        });
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel2MousePressed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 30)); // NOI18N
         jLabel1.setText("Sistema de Venta Bavaria");
@@ -308,8 +332,8 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 606, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 548, Short.MAX_VALUE)
                 .addComponent(txtTime, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(111, 111, 111)
                 .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -317,14 +341,13 @@ public class PantallaVenta extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addComponent(txtFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtTime, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(txtTime, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
@@ -1850,8 +1873,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1886,10 +1910,20 @@ public class PantallaVenta extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(51, 255, 0));
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
         jButton1.setText("Total");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(0, 255, 153));
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
-        jButton2.setText("Recibo");
+        btnRecibo.setBackground(new java.awt.Color(0, 255, 153));
+        btnRecibo.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
+        btnRecibo.setText("Recibo");
+        btnRecibo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReciboActionPerformed(evt);
+            }
+        });
 
         btnResetear.setBackground(new java.awt.Color(0, 0, 204));
         btnResetear.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
@@ -1917,7 +1951,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRecibo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(btnResetear)
                 .addGap(33, 33, 33)
@@ -1930,7 +1964,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRecibo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnResetear, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnSalir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(9, Short.MAX_VALUE))
@@ -2035,36 +2069,91 @@ public class PantallaVenta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
-
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
-
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
-
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
-
-    public void royalCafe() {
-        jTextArea.setText("********************************Royal Café************************************\n"
-                + "Time: " + txtTime.getText() + " Date: " + txtFecha.getText() + "\n"
-                + "***************************************************************************"
-                + "Nombre Producto:\t\t\t"+"Precio($)");
-    }
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        int qty = Integer.parseInt(jSpinner1.getValue().toString());
-        if (!qtyIsZero(qty)) {
+        int qty = Integer.parseInt(jSpinner5.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox5.isSelected()) {
             x++;
             if (x == 1) {
                 royalCafe();
             }
-            double price = qty*3500;
-            jTextArea.setText(jTextArea.getText()+x+". "+jLabel10.getText()+"\t\t\t");
+            double price = qty * 4000.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel63.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox5.setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox5ActionPerformed
+
+    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+        int qty = Integer.parseInt(jSpinner4.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox4.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 4000.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel54.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox4.setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox4ActionPerformed
+
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+        int qty = Integer.parseInt(jSpinner3.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox3.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 3000.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel45.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox3.setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        int qty = Integer.parseInt(jSpinner2.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox2.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 4000.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel36.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox2.setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
+
+    public void royalCafe() {
+        jTextArea.setText("********************************BAVARIA************************************\n"
+                + "Time: " + txtTime.getText() + " Date: " + txtFecha.getText() + "\n"
+                + "***************************************************************************\n"
+                + "Nombre Producto:\t\t\t" + "Precio($)\n");
+    }
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        int qty = Integer.parseInt(jSpinner1.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox1.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 3500.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel10.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
         } else {
             jCheckBox1.setSelected(false);
         }
@@ -2072,43 +2161,175 @@ public class PantallaVenta extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
-        // TODO add your handling code here:
+        int qty = Integer.parseInt(jSpinner6.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox6.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 4000.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel72.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox6.setSelected(false);
+        }
+
     }//GEN-LAST:event_jCheckBox6ActionPerformed
 
     private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
-        // TODO add your handling code here:
+        int qty = Integer.parseInt(jSpinner11.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox11.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 3000.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel81.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox11.setSelected(false);
+        }
     }//GEN-LAST:event_jCheckBox11ActionPerformed
 
     private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
-        // TODO add your handling code here:
+        int qty = Integer.parseInt(jSpinner7.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox7.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 4000.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel90.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox7.setSelected(false);
+        }
+
     }//GEN-LAST:event_jCheckBox7ActionPerformed
 
     private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
-        // TODO add your handling code here:
+        int qty = Integer.parseInt(jSpinner8.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox8.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 3500.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel99.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox8.setSelected(false);
+        }
     }//GEN-LAST:event_jCheckBox8ActionPerformed
 
     private void jCheckBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox9ActionPerformed
-        // TODO add your handling code here:
+        int qty = Integer.parseInt(jSpinner9.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox9.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 4000.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel108.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox9.setSelected(false);
+        }
     }//GEN-LAST:event_jCheckBox9ActionPerformed
 
     private void jCheckBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox10ActionPerformed
-        // TODO add your handling code here:
+        int qty = Integer.parseInt(jSpinner10.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox10.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 3000.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel117.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox10.setSelected(false);
+        }
     }//GEN-LAST:event_jCheckBox10ActionPerformed
 
     private void jCheckBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox13ActionPerformed
-        // TODO add your handling code here:
+        int qty = Integer.parseInt(jSpinner13.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox13.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 4000.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel126.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox13.setSelected(false);
+        }
     }//GEN-LAST:event_jCheckBox13ActionPerformed
 
     private void jCheckBox14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox14ActionPerformed
-        // TODO add your handling code here:
+        int qty = Integer.parseInt(jSpinner14.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox14.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 3500.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel135.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox14.setSelected(false);
+        }
     }//GEN-LAST:event_jCheckBox14ActionPerformed
 
     private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
-        // TODO add your handling code here:
+        int qty = Integer.parseInt(jSpinner12.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox12.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 4000.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel144.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox12.setSelected(false);
+        }
     }//GEN-LAST:event_jCheckBox12ActionPerformed
 
     private void jCheckBox15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox15ActionPerformed
-        // TODO add your handling code here:
+        int qty = Integer.parseInt(jSpinner15.getValue().toString());
+        if (qtyIsZero(qty) && jCheckBox15.isSelected()) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty * 2500.0;
+            total += price;
+            GetImpuesto(total);
+            jTextArea.setText(jTextArea.getText() + x + ". " + jLabel153.getText() + "\t\t\t" + "                          " + price + "\n");
+            dudate();
+        } else {
+            jCheckBox15.setSelected(false);
+        }
     }//GEN-LAST:event_jCheckBox15ActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -2118,6 +2339,63 @@ public class PantallaVenta extends javax.swing.JFrame {
     private void btnResetearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetearActionPerformed
         resetear();
     }//GEN-LAST:event_btnResetearActionPerformed
+    int xx, xy;
+    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xx, y - xy);
+    }//GEN-LAST:event_jPanel2MouseDragged
+
+    private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
+        xx = evt.getX();
+        xy = evt.getY();
+    }//GEN-LAST:event_jPanel2MousePressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (total == 0.0) {
+            JOptionPane.showMessageDialog(null, "Selecciona algún item");
+        } else {
+            jTextArea.setText(jTextArea.getText()
+                    + "\n********************************************************************\n"
+                    + "Impuesto: \t\t\t" + impuesto + "\n"
+                    + "Sub Total: \t\t\t" + total + "\n"
+                    + "Total: \t\t\t" + (total + impuesto) + "\n\n"
+                    + "********************************Gracias por tu compra************************************\n"
+            );
+
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnReciboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReciboActionPerformed
+        if (total != 0) {
+            try {
+                jTextArea.print();
+            } catch (PrinterException ex) {
+                Logger.getLogger(PantallaVenta.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "Debes comprar algún producto");
+        }
+    }//GEN-LAST:event_btnReciboActionPerformed
+
+    public void GetImpuesto(double t) {
+        if (t > 10000.0 && t <= 30000.0) {
+            impuesto = 500.0;
+        } else if (t > 20000.0 && t <= 40000.0) {
+            impuesto = 1000.0;
+        } else if (t > 40000.0 && t <= 60000.0) {
+            impuesto = 2000.0;
+        } else if (t > 60000.0 && t <= 80000.0) {
+            impuesto = 3000.0;
+        } else if (t > 80000.0 && t <= 100000.0) {
+            impuesto = 4000.0;
+        } else if (t > 100000.0 && t <= 200000.0) {
+            impuesto = 4500.0;
+        } else if (t > 200000.0) {
+            impuesto = 5000.0;
+        }
+
+    }
 
     public void setTime() {
         new Thread(new Runnable() {
@@ -2176,10 +2454,10 @@ public class PantallaVenta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRecibo;
     private javax.swing.JButton btnResetear;
     private javax.swing.JButton btnSalir;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
     private javax.swing.JCheckBox jCheckBox11;
