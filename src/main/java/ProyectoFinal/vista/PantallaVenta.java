@@ -19,30 +19,32 @@ import javax.swing.JOptionPane;
 public class PantallaVenta extends javax.swing.JFrame {
 
     private double total = 0.0;
+    private int x = 0;
+
     public PantallaVenta() {
         initComponents();
     }
-    
+
     public void init() {
         setImage();
         setTime();
     }
-    
-    public void setImage(){
+
+    public void setImage() {
         ImageIcon icon = new ImageIcon(getClass().getResource("/images/AGUILA.png"));
         Image img = icon.getImage().getScaledInstance(jLabelmage.getWidth(), jLabelmage.getHeight(), Image.SCALE_SMOOTH);
         jLabelmage.setIcon(new ImageIcon(img));
     }
-    
-    public boolean qtyIsZero(int qty){
-        if (qty==0) {
+
+    public boolean qtyIsZero(int qty) {
+        if (qty == 0) {
             JOptionPane.showMessageDialog(null, "Por favor incrementa la cantidad de items");
             return false;
         }
         return true;
     }
-    
-    public void resetear(){
+
+    public void resetear() {
         jSpinner1.setValue(0);
         jSpinner2.setValue(0);
         jSpinner3.setValue(0);
@@ -61,8 +63,24 @@ public class PantallaVenta extends javax.swing.JFrame {
         txtImpuesto.setText("0.0");
         txtSubtotal.setText("0.0");
         txtTotal.setText("0.0");
+        jTextArea.setText("");
+        jCheckBox1.setSelected(false);
+        jCheckBox2.setSelected(false);
+        jCheckBox3.setSelected(false);
+        jCheckBox4.setSelected(false);
+        jCheckBox5.setSelected(false);
+        jCheckBox6.setSelected(false);
+        jCheckBox7.setSelected(false);
+        jCheckBox8.setSelected(false);
+        jCheckBox9.setSelected(false);
+        jCheckBox10.setSelected(false);
+        jCheckBox11.setSelected(false);
+        jCheckBox12.setSelected(false);
+        jCheckBox13.setSelected(false);
+        jCheckBox14.setSelected(false);
+        jCheckBox15.setSelected(false);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -98,7 +116,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jSpinner2 = new javax.swing.JSpinner();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
         jPanel8 = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
@@ -110,7 +128,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jSpinner3 = new javax.swing.JSpinner();
-        jCheckBox5 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
         jPanel9 = new javax.swing.JPanel();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
@@ -122,7 +140,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jSpinner4 = new javax.swing.JSpinner();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
         jPanel10 = new javax.swing.JPanel();
         jLabel56 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
@@ -134,7 +152,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         jSpinner5 = new javax.swing.JSpinner();
-        jCheckBox7 = new javax.swing.JCheckBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
         jPanel11 = new javax.swing.JPanel();
         jLabel65 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
@@ -146,7 +164,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel72 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
         jSpinner6 = new javax.swing.JSpinner();
-        jCheckBox8 = new javax.swing.JCheckBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
         jPanel12 = new javax.swing.JPanel();
         jLabel74 = new javax.swing.JLabel();
         jLabel75 = new javax.swing.JLabel();
@@ -158,7 +176,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel81 = new javax.swing.JLabel();
         jLabel82 = new javax.swing.JLabel();
         jSpinner11 = new javax.swing.JSpinner();
-        jCheckBox9 = new javax.swing.JCheckBox();
+        jCheckBox11 = new javax.swing.JCheckBox();
         jPanel13 = new javax.swing.JPanel();
         jLabel83 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
@@ -170,7 +188,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel90 = new javax.swing.JLabel();
         jLabel91 = new javax.swing.JLabel();
         jSpinner7 = new javax.swing.JSpinner();
-        jCheckBox10 = new javax.swing.JCheckBox();
+        jCheckBox7 = new javax.swing.JCheckBox();
         jPanel14 = new javax.swing.JPanel();
         jLabel92 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
@@ -182,7 +200,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel99 = new javax.swing.JLabel();
         jLabel100 = new javax.swing.JLabel();
         jSpinner8 = new javax.swing.JSpinner();
-        jCheckBox11 = new javax.swing.JCheckBox();
+        jCheckBox8 = new javax.swing.JCheckBox();
         jPanel15 = new javax.swing.JPanel();
         jLabel101 = new javax.swing.JLabel();
         jLabel102 = new javax.swing.JLabel();
@@ -194,7 +212,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel108 = new javax.swing.JLabel();
         jLabel109 = new javax.swing.JLabel();
         jSpinner9 = new javax.swing.JSpinner();
-        jCheckBox12 = new javax.swing.JCheckBox();
+        jCheckBox9 = new javax.swing.JCheckBox();
         jPanel16 = new javax.swing.JPanel();
         jLabel110 = new javax.swing.JLabel();
         jLabel111 = new javax.swing.JLabel();
@@ -206,7 +224,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel117 = new javax.swing.JLabel();
         jLabel118 = new javax.swing.JLabel();
         jSpinner10 = new javax.swing.JSpinner();
-        jCheckBox13 = new javax.swing.JCheckBox();
+        jCheckBox10 = new javax.swing.JCheckBox();
         jPanel17 = new javax.swing.JPanel();
         jLabel119 = new javax.swing.JLabel();
         jLabel120 = new javax.swing.JLabel();
@@ -218,7 +236,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel126 = new javax.swing.JLabel();
         jLabel127 = new javax.swing.JLabel();
         jSpinner13 = new javax.swing.JSpinner();
-        jCheckBox14 = new javax.swing.JCheckBox();
+        jCheckBox13 = new javax.swing.JCheckBox();
         jPanel18 = new javax.swing.JPanel();
         jLabel128 = new javax.swing.JLabel();
         jLabel129 = new javax.swing.JLabel();
@@ -230,7 +248,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel135 = new javax.swing.JLabel();
         jLabel136 = new javax.swing.JLabel();
         jSpinner14 = new javax.swing.JSpinner();
-        jCheckBox15 = new javax.swing.JCheckBox();
+        jCheckBox14 = new javax.swing.JCheckBox();
         jPanel19 = new javax.swing.JPanel();
         jLabel137 = new javax.swing.JLabel();
         jLabel138 = new javax.swing.JLabel();
@@ -242,7 +260,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel144 = new javax.swing.JLabel();
         jLabel145 = new javax.swing.JLabel();
         jSpinner12 = new javax.swing.JSpinner();
-        jCheckBox16 = new javax.swing.JCheckBox();
+        jCheckBox12 = new javax.swing.JCheckBox();
         jPanel20 = new javax.swing.JPanel();
         jLabel146 = new javax.swing.JLabel();
         jLabel147 = new javax.swing.JLabel();
@@ -254,7 +272,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         jLabel153 = new javax.swing.JLabel();
         jLabel154 = new javax.swing.JLabel();
         jSpinner15 = new javax.swing.JSpinner();
-        jCheckBox17 = new javax.swing.JCheckBox();
+        jCheckBox15 = new javax.swing.JCheckBox();
         jPanel21 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -262,7 +280,7 @@ public class PantallaVenta extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextArea = new javax.swing.JTextArea();
         txtImpuesto = new javax.swing.JTextField();
         txtTotal = new javax.swing.JTextField();
         txtSubtotal = new javax.swing.JTextField();
@@ -450,9 +468,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner2.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
+                jCheckBox2ActionPerformed(evt);
             }
         });
 
@@ -485,7 +503,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel7Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox4)))))
+                                .addComponent(jCheckBox2)))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -510,7 +528,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox4)
+                    .addComponent(jCheckBox2)
                     .addComponent(jLabel34))
                 .addGap(11, 11, 11))
         );
@@ -548,9 +566,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner3.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
+                jCheckBox3ActionPerformed(evt);
             }
         });
 
@@ -583,7 +601,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox5)))))
+                                .addComponent(jCheckBox3)))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
@@ -608,7 +626,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox5)
+                    .addComponent(jCheckBox3)
                     .addComponent(jLabel43))
                 .addGap(11, 11, 11))
         );
@@ -646,9 +664,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner4.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox6ActionPerformed(evt);
+                jCheckBox4ActionPerformed(evt);
             }
         });
 
@@ -681,7 +699,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox6)))))
+                                .addComponent(jCheckBox4)))))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
@@ -706,7 +724,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox6)
+                    .addComponent(jCheckBox4)
                     .addComponent(jLabel52))
                 .addGap(11, 11, 11))
         );
@@ -744,9 +762,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner5.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox7ActionPerformed(evt);
+                jCheckBox5ActionPerformed(evt);
             }
         });
 
@@ -779,7 +797,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel10Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox7)))))
+                                .addComponent(jCheckBox5)))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
@@ -804,7 +822,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox7)
+                    .addComponent(jCheckBox5)
                     .addComponent(jLabel61))
                 .addGap(11, 11, 11))
         );
@@ -842,9 +860,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner6.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox8ActionPerformed(evt);
+                jCheckBox6ActionPerformed(evt);
             }
         });
 
@@ -877,7 +895,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox8)))))
+                                .addComponent(jCheckBox6)))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
@@ -902,7 +920,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox8)
+                    .addComponent(jCheckBox6)
                     .addComponent(jLabel70))
                 .addGap(11, 11, 11))
         );
@@ -940,9 +958,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner11.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox9.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox9ActionPerformed(evt);
+                jCheckBox11ActionPerformed(evt);
             }
         });
 
@@ -975,7 +993,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner11, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel12Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox9)))))
+                                .addComponent(jCheckBox11)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
@@ -1000,7 +1018,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox9)
+                    .addComponent(jCheckBox11)
                     .addComponent(jLabel79))
                 .addGap(11, 11, 11))
         );
@@ -1038,9 +1056,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner7.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox10.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox10ActionPerformed(evt);
+                jCheckBox7ActionPerformed(evt);
             }
         });
 
@@ -1073,7 +1091,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner7, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel13Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox10)))))
+                                .addComponent(jCheckBox7)))))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel13Layout.setVerticalGroup(
@@ -1098,7 +1116,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox10)
+                    .addComponent(jCheckBox7)
                     .addComponent(jLabel88))
                 .addGap(11, 11, 11))
         );
@@ -1136,9 +1154,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner8.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox11.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox11ActionPerformed(evt);
+                jCheckBox8ActionPerformed(evt);
             }
         });
 
@@ -1171,7 +1189,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel14Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox11)))))
+                                .addComponent(jCheckBox8)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
@@ -1196,7 +1214,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox11)
+                    .addComponent(jCheckBox8)
                     .addComponent(jLabel97))
                 .addGap(11, 11, 11))
         );
@@ -1234,9 +1252,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner9.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox12.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox12ActionPerformed(evt);
+                jCheckBox9ActionPerformed(evt);
             }
         });
 
@@ -1269,7 +1287,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner9, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel15Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox12)))))
+                                .addComponent(jCheckBox9)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel15Layout.setVerticalGroup(
@@ -1294,7 +1312,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox12)
+                    .addComponent(jCheckBox9)
                     .addComponent(jLabel106))
                 .addGap(11, 11, 11))
         );
@@ -1332,9 +1350,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner10.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox13.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox13ActionPerformed(evt);
+                jCheckBox10ActionPerformed(evt);
             }
         });
 
@@ -1367,7 +1385,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner10, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel16Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox13)))))
+                                .addComponent(jCheckBox10)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel16Layout.setVerticalGroup(
@@ -1392,7 +1410,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox13)
+                    .addComponent(jCheckBox10)
                     .addComponent(jLabel115))
                 .addGap(11, 11, 11))
         );
@@ -1430,9 +1448,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner13.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox14.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox14ActionPerformed(evt);
+                jCheckBox13ActionPerformed(evt);
             }
         });
 
@@ -1465,7 +1483,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner13, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel17Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox14)))))
+                                .addComponent(jCheckBox13)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
@@ -1490,7 +1508,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox14)
+                    .addComponent(jCheckBox13)
                     .addComponent(jLabel124))
                 .addGap(11, 11, 11))
         );
@@ -1528,9 +1546,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner14.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox15.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox15ActionPerformed(evt);
+                jCheckBox14ActionPerformed(evt);
             }
         });
 
@@ -1563,7 +1581,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner14, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel18Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox15)))))
+                                .addComponent(jCheckBox14)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
@@ -1588,7 +1606,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox15)
+                    .addComponent(jCheckBox14)
                     .addComponent(jLabel133))
                 .addGap(11, 11, 11))
         );
@@ -1626,9 +1644,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner12.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox16.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox16ActionPerformed(evt);
+                jCheckBox12ActionPerformed(evt);
             }
         });
 
@@ -1661,7 +1679,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner12, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel19Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox16)))))
+                                .addComponent(jCheckBox12)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
@@ -1686,7 +1704,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox16)
+                    .addComponent(jCheckBox12)
                     .addComponent(jLabel142))
                 .addGap(11, 11, 11))
         );
@@ -1724,9 +1742,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jSpinner15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jSpinner15.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
 
-        jCheckBox17.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox17ActionPerformed(evt);
+                jCheckBox15ActionPerformed(evt);
             }
         });
 
@@ -1759,7 +1777,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner15, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel20Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox17)))))
+                                .addComponent(jCheckBox15)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
@@ -1784,7 +1802,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addComponent(jSpinner15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox17)
+                    .addComponent(jCheckBox15)
                     .addComponent(jLabel151))
                 .addGap(11, 11, 11))
         );
@@ -1923,9 +1941,9 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        jTextArea.setColumns(20);
+        jTextArea.setRows(5);
+        jScrollPane2.setViewportView(jTextArea);
 
         txtImpuesto.setEditable(false);
         txtImpuesto.setFont(new java.awt.Font("Times New Roman", 1, 20)); // NOI18N
@@ -2016,14 +2034,6 @@ public class PantallaVenta extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox7ActionPerformed
-
-    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox6ActionPerformed
-
     private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox5ActionPerformed
@@ -2032,13 +2042,46 @@ public class PantallaVenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
+
+    public void royalCafe() {
+        jTextArea.setText("********************************Royal Café************************************\n"
+                + "Time: " + txtTime.getText() + " Date: " + txtFecha.getText() + "\n"
+                + "***************************************************************************"
+                + "Nombre Producto:\t\t\t"+"Precio($)");
+    }
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         int qty = Integer.parseInt(jSpinner1.getValue().toString());
-        if(!qtyIsZero(qty)){
-            
+        if (!qtyIsZero(qty)) {
+            x++;
+            if (x == 1) {
+                royalCafe();
+            }
+            double price = qty*3500;
+            jTextArea.setText(jTextArea.getText()+x+". "+jLabel10.getText()+"\t\t\t");
+        } else {
+            jCheckBox1.setSelected(false);
         }
-        
+
     }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox6ActionPerformed
+
+    private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox11ActionPerformed
+
+    private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox7ActionPerformed
 
     private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
         // TODO add your handling code here:
@@ -2052,14 +2095,6 @@ public class PantallaVenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox10ActionPerformed
 
-    private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox11ActionPerformed
-
-    private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox12ActionPerformed
-
     private void jCheckBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox13ActionPerformed
@@ -2068,17 +2103,13 @@ public class PantallaVenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox14ActionPerformed
 
+    private void jCheckBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox12ActionPerformed
+
     private void jCheckBox15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox15ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox15ActionPerformed
-
-    private void jCheckBox16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox16ActionPerformed
-
-    private void jCheckBox17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox17ActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         System.exit(0);
@@ -2088,11 +2119,11 @@ public class PantallaVenta extends javax.swing.JFrame {
         resetear();
     }//GEN-LAST:event_btnResetearActionPerformed
 
-    public void setTime(){
+    public void setTime() {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                while(true){
+                while (true) {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException ex) {
@@ -2102,12 +2133,13 @@ public class PantallaVenta extends javax.swing.JFrame {
                     SimpleDateFormat tf = new SimpleDateFormat("h:mm:ss aa");
                     SimpleDateFormat df = new SimpleDateFormat("EEEE, dd-MM-yyyy");
                     String time = tf.format(date);
-                    txtTime.setText(time.split(" ")[0]+" "+time.split(" ")[1]);
+                    txtTime.setText(time.split(" ")[0] + " " + time.split(" ")[1]);
                     txtFecha.setText(df.format(date));
-                } 
+                }
             }
         }).start();
     }
+
     /**
      * @param args the command line arguments
      */
@@ -2155,8 +2187,8 @@ public class PantallaVenta extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox13;
     private javax.swing.JCheckBox jCheckBox14;
     private javax.swing.JCheckBox jCheckBox15;
-    private javax.swing.JCheckBox jCheckBox16;
-    private javax.swing.JCheckBox jCheckBox17;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JCheckBox jCheckBox6;
@@ -2340,7 +2372,7 @@ public class PantallaVenta extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner7;
     private javax.swing.JSpinner jSpinner8;
     private javax.swing.JSpinner jSpinner9;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea;
     private javax.swing.JLabel txtFecha;
     private javax.swing.JTextField txtImpuesto;
     private javax.swing.JTextField txtSubtotal;
