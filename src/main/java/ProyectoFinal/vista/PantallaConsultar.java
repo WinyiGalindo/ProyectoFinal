@@ -14,16 +14,16 @@ import java.util.ArrayList;
  */
 public class PantallaConsultar extends javax.swing.JFrame {
 
-    private ArrayList<Bebida> listaBebidas;
+    public ArrayList<Bebida> ListaBebidas;
 
     /**
      * Creates new form PantallaConsultar
      */
     public PantallaConsultar() {
         initComponents();
-        listaBebidas = new ArrayList<>(); // Inicializar la lista
+        ListaBebidas = new ArrayList<>(); // Inicializar la lista
         CBebida controlador = new CBebida();
-        controlador.crearInventario(listaBebidas); // Crear el inventario
+        controlador.crearInventario(ListaBebidas); // Crear el inventario
     }
 
     /**
@@ -150,7 +150,7 @@ public class PantallaConsultar extends javax.swing.JFrame {
             int idProducto = Integer.parseInt(idTexto);
 
             CBebida controlador = new CBebida();
-            Bebida bebida = controlador.consultarProducto(idProducto, listaBebidas); // listaBebidas debe estar inicializada
+            Bebida bebida = controlador.consultarProducto(idProducto, ListaBebidas); // listaBebidas debe estar inicializada
 
             javax.swing.table.DefaultTableModel modelo = (javax.swing.table.DefaultTableModel) tblConsultar.getModel();
             modelo.setRowCount(0); // Limpiar tabla

@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @author sotod
  */
 public class PantallaModificar extends javax.swing.JFrame {
-    private ArrayList<Bebida> listaBebidas;
+    public ArrayList<Bebida> ListaBebidas;
 
     /** Creates new form PantallaModificar */
     public PantallaModificar() {

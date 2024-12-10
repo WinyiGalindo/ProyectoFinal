@@ -11,8 +11,6 @@ import ProyectoFinal.modelo.Bebida;
  * @author sotod
  */
 public class CInventario {
-    public void agregarBebida (Bebida bebidas){
-        
-    }
+    
     
 }

@@ -49,8 +49,8 @@ public class CBebida {
 
     }
 
-    public Bebida consultarProducto(int idProducto, ArrayList<Bebida> listaBebidas) {
-        for (Bebida bebida : listaBebidas) {
+    public Bebida consultarProducto(int idProducto, ArrayList<Bebida> ListaBebidas) {
+        for (Bebida bebida : ListaBebidas) {
             if (bebida.getId() == idProducto) {
                 return bebida; // Producto encontrado
             }
@@ -58,14 +58,17 @@ public class CBebida {
         return null; // Producto no encontrado
     }
 
-    public boolean eliminarProductoPorID(ArrayList<Bebida> listaBebidas, int id) {
-        for (Bebida bebida : listaBebidas) {
-            if (bebida.getId() == id) {
-                listaBebidas.remove(bebida);
-                return true; // Producto eliminado
-            }
+    public boolean eliminarProductoPorID(ArrayList<Bebida> ListaBebidas, int id) {
+    // Usamos un bucle tradicional con índice para evitar ConcurrentModificationException
+    for (int i = 0; i < ListaBebidas.size(); i++) {
+        Bebida bebida = ListaBebidas.get(i);  // Obtener el producto en la posición i
+        if (bebida.getId() == id) {  // Comparar si el ID coincide
+            ListaBebidas.remove(i);  // Eliminar el producto en esa posición
+            return true;  // Producto eliminado
         }
-        return false; // Producto no encontrado
     }
+    return false;  // Producto no encontrado
+}
+
 
 }
