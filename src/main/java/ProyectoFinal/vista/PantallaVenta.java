@@ -25,6 +25,7 @@ public class PantallaVenta extends javax.swing.JFrame {
 
     public PantallaVenta() {
         initComponents();
+        setImage();
     }
 
     public void init() {
@@ -33,9 +34,260 @@ public class PantallaVenta extends javax.swing.JFrame {
     }
 
     public void setImage() {
-        ImageIcon icon = new ImageIcon(getClass().getResource("/images/AGUILA.png"));
-        Image img = icon.getImage().getScaledInstance(jLabelmage.getWidth(), jLabelmage.getHeight(), Image.SCALE_SMOOTH);
-        jLabelmage.setIcon(new ImageIcon(img));
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("AGUILALIGHT.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel29.getWidth(), jLabel29.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel29.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("AGUILA.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabelmage.getWidth(), jLabelmage.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabelmage.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("BECKS.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel38.getWidth(), jLabel38.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel38.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("BOTELLA_LIMON_0.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel47.getWidth(), jLabel47.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel47.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("BUDWEISER.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel56.getWidth(), jLabel56.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel56.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("CLUBCOLOMBIADORADA.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel65.getWidth(), jLabel65.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel65.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("CLUBCOLOMBIANEGRA.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel83.getWidth(), jLabel83.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel83.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("COLAYPOLA.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel92.getWidth(), jLabel92.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel92.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("COSTEÑABACANA.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel101.getWidth(), jLabel101.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel101.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("MALTALEONA.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel110.getWidth(), jLabel110.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel110.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("PILSEN.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel74.getWidth(), jLabel74.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel74.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("POKER.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel137.getWidth(), jLabel137.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel137.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("POKERROJA.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel119.getWidth(), jLabel119.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel119.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("REDDS.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel128.getWidth(), jLabel128.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel128.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
+        
+        try {
+            // Cargar la imagen desde el classpath (no incluyas "src/main/resources" en la ruta)
+            ImageIcon originalIcon = new ImageIcon(getClass().getClassLoader().getResource("PONYMALTA.png"));
+
+            // Redimensionar la imagen al tamaño del JLabel
+            Image img = originalIcon.getImage();
+            Image scaledImg = img.getScaledInstance(jLabel146.getWidth(), jLabel146.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon scaledIcon = new ImageIcon(scaledImg);
+
+            // Establecer la imagen redimensionada en el JLabel
+            jLabel146.setIcon(scaledIcon);
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error al cargar la imagen: " + e.getMessage());
+        }
     }
 
     public boolean qtyIsZero(int qty) {
@@ -91,7 +343,7 @@ public class PantallaVenta extends javax.swing.JFrame {
     public void dudate() {
         txtImpuesto.setText(String.valueOf(String.format("%.2f", impuesto)));
         txtSubtotal.setText(String.valueOf(String.format("%.2f", total)));
-        txtTotal.setText(String.valueOf(String.format("%.2f", total+impuesto)));
+        txtTotal.setText(String.valueOf(String.format("%.2f", total + impuesto)));
     }
 
     @SuppressWarnings("unchecked")
@@ -303,6 +555,11 @@ public class PantallaVenta extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(230, 230, 230), 2));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -400,17 +657,8 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -423,9 +671,19 @@ public class PantallaVenta extends javax.swing.JFrame {
                                     .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jCheckBox1)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabelmage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jCheckBox1))))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabelmage, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -501,7 +759,6 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -528,6 +785,10 @@ public class PantallaVenta extends javax.swing.JFrame {
                                 .addGap(26, 26, 26)
                                 .addComponent(jCheckBox2)))))
                 .addContainerGap(27, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -697,7 +958,6 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -724,6 +984,10 @@ public class PantallaVenta extends javax.swing.JFrame {
                                 .addGap(26, 26, 26)
                                 .addComponent(jCheckBox4)))))
                 .addContainerGap(14, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -795,7 +1059,6 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -822,6 +1085,10 @@ public class PantallaVenta extends javax.swing.JFrame {
                                 .addGap(26, 26, 26)
                                 .addComponent(jCheckBox5)))))
                 .addContainerGap(27, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -893,7 +1160,6 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel65, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -920,6 +1186,10 @@ public class PantallaVenta extends javax.swing.JFrame {
                                 .addGap(26, 26, 26)
                                 .addComponent(jCheckBox6)))))
                 .addContainerGap(27, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -991,32 +1261,36 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel75, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel78, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel81, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel80, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel79, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap()
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel12Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel82)
-                                    .addComponent(jSpinner11, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel75, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel78, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel81, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel80, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(jPanel12Layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(jCheckBox11)))))
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel79, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel12Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel82)
+                                            .addComponent(jSpinner11, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel12Layout.createSequentialGroup()
+                                        .addGap(26, 26, 26)
+                                        .addComponent(jCheckBox11))))))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel74, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
@@ -1089,7 +1363,6 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel83, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1116,6 +1389,10 @@ public class PantallaVenta extends javax.swing.JFrame {
                                 .addGap(26, 26, 26)
                                 .addComponent(jCheckBox7)))))
                 .addContainerGap(27, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel83, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1187,7 +1464,6 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel92, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1213,7 +1489,11 @@ public class PantallaVenta extends javax.swing.JFrame {
                             .addGroup(jPanel14Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
                                 .addComponent(jCheckBox8)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel92, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1383,7 +1663,6 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel110, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel16Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1409,7 +1688,11 @@ public class PantallaVenta extends javax.swing.JFrame {
                             .addGroup(jPanel16Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
                                 .addComponent(jCheckBox10)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel110, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1481,7 +1764,6 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel119, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1507,7 +1789,11 @@ public class PantallaVenta extends javax.swing.JFrame {
                             .addGroup(jPanel17Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
                                 .addComponent(jCheckBox13)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel119, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1677,7 +1963,6 @@ public class PantallaVenta extends javax.swing.JFrame {
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel137, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1703,7 +1988,11 @@ public class PantallaVenta extends javax.swing.JFrame {
                             .addGroup(jPanel19Layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
                                 .addComponent(jCheckBox12)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel137, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1839,7 +2128,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -2012,24 +2301,27 @@ public class PantallaVenta extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtSubtotal, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtImpuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 597, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel5Layout.createSequentialGroup()
                     .addGap(46, 46, 46)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(482, Short.MAX_VALUE)))
+                    .addContainerGap(432, Short.MAX_VALUE)))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGap(19, 19, 19)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(txtImpuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2047,7 +2339,7 @@ public class PantallaVenta extends javax.swing.JFrame {
                     .addGap(92, 92, 92)))
         );
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 50, 650, 820));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 50, 600, 820));
 
         jScrollPane1.setViewportView(jPanel1);
 
@@ -2373,10 +2665,23 @@ public class PantallaVenta extends javax.swing.JFrame {
             } catch (PrinterException ex) {
                 Logger.getLogger(PantallaVenta.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Debes comprar algún producto");
         }
     }//GEN-LAST:event_btnReciboActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        for(double i=0.0; i<=1.0;i +=0.1){
+            String s = i+"";
+            float f = Float.valueOf(s);
+            this.setOpacity(f);
+            try {
+                Thread.sleep(40);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(PantallaVenta.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_formWindowOpened
 
     public void GetImpuesto(double t) {
         if (t > 10000.0 && t <= 30000.0) {
